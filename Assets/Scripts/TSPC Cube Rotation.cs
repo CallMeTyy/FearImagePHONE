@@ -8,7 +8,7 @@ public class TSPCCubeRotation : MonoBehaviour
     public bool Right;
     public bool Left;
     public bool Stop;
-    public Vector4 ColorRed;
+    [HideInInspector] public Color red = Color.red;
 
     void Start()
     {

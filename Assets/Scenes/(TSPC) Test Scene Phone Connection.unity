@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1038,7 +1038,6 @@ GameObject:
   - component: {fileID: 872590885}
   - component: {fileID: 872590886}
   - component: {fileID: 872590887}
-  - component: {fileID: 872590888}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -1147,7 +1146,7 @@ MonoBehaviour:
   Right: 0
   Left: 0
   Stop: 0
-  ColorRed: {x: 0, y: 0, z: 0, w: 0}
+  ColorRed: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &872590886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1175,37 +1174,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 872590880}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 413652edbc1984337954aa180b219021, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _transmitter: {fileID: 114694330}
-  _address: /RED
+  _address: /color
   _mapBundle: {fileID: 0}
   reflectionMember:
-    Target: {fileID: 872590884}
-    MemberName: 
-  informOnChanged: 0
-  informInterval: 0
---- !u!114 &872590888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 872590880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d6aff875a47e4704aa987233894d61a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _transmitter: {fileID: 114694330}
-  _address: /ColorCube
-  _mapBundle: {fileID: 0}
-  reflectionMember:
-    Target: {fileID: 872590884}
-    MemberName: 
+    Target: {fileID: 872590885}
+    MemberName: ColorRed
   informOnChanged: 1
   informInterval: 0
 --- !u!1 &963194225
@@ -1687,7 +1666,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1331933599}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 872590880}
+        m_TargetAssemblyTypeName: extOSC.Components.OSCTransmitterComponent, extOSC
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1331933599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1733,17 +1724,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1331933596}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 413652edbc1984337954aa180b219021, type: 3}
+  m_Script: {fileID: 11500000, guid: 0d6aff875a47e4704aa987233894d61a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _transmitter: {fileID: 114694330}
-  _address: /Red
+  _address: /ColorCube
   _mapBundle: {fileID: 0}
   reflectionMember:
-    Target: {fileID: 872590884}
-    MemberName: 
+    Target: {fileID: 872590885}
+    MemberName: ColorRed
   informOnChanged: 1
   informInterval: 0
 --- !u!1 &1455928143
