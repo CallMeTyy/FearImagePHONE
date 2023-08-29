@@ -1146,7 +1146,7 @@ MonoBehaviour:
   Right: 0
   Left: 0
   Stop: 0
-  ColorRed: {r: 0, g: 0, b: 0, a: 0}
+  red: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &872590886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1184,7 +1184,7 @@ MonoBehaviour:
   _mapBundle: {fileID: 0}
   reflectionMember:
     Target: {fileID: 872590885}
-    MemberName: ColorRed
+    MemberName: red
   informOnChanged: 1
   informInterval: 0
 --- !u!1 &963194225
@@ -1595,7 +1595,6 @@ GameObject:
   - component: {fileID: 1331933600}
   - component: {fileID: 1331933599}
   - component: {fileID: 1331933598}
-  - component: {fileID: 1331933601}
   m_Layer: 0
   m_Name: RED
   m_TagString: Untagged
@@ -1667,9 +1666,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 872590880}
+      - m_Target: {fileID: 872590887}
         m_TargetAssemblyTypeName: extOSC.Components.OSCTransmitterComponent, extOSC
-        m_MethodName: 
+        m_MethodName: Send
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1717,26 +1716,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1331933596}
   m_CullTransparentMesh: 1
---- !u!114 &1331933601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1331933596}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d6aff875a47e4704aa987233894d61a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _transmitter: {fileID: 114694330}
-  _address: /ColorCube
-  _mapBundle: {fileID: 0}
-  reflectionMember:
-    Target: {fileID: 872590885}
-    MemberName: ColorRed
-  informOnChanged: 1
-  informInterval: 0
 --- !u!1 &1455928143
 GameObject:
   m_ObjectHideFlags: 0
@@ -1824,6 +1803,7 @@ GameObject:
   - component: {fileID: 1480512655}
   - component: {fileID: 1480512654}
   - component: {fileID: 1480512653}
+  - component: {fileID: 1480512656}
   m_Layer: 0
   m_Name: SUBMIT
   m_TagString: Untagged
@@ -1894,7 +1874,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1480512654}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1480512656}
+        m_TargetAssemblyTypeName: extOSC.Components.OSCTransmitterComponent, extOSC
+        m_MethodName: Send
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1480512654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1933,6 +1925,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1480512651}
   m_CullTransparentMesh: 1
+--- !u!114 &1480512656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480512651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d31582afe4b495f8a509ea615cfbaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transmitter: {fileID: 114694330}
+  _address: /text
+  _mapBundle: {fileID: 0}
+  reflectionMember:
+    Target: {fileID: 1052927098}
+    MemberName: text
+  informOnChanged: 0
+  informInterval: 1000000
 --- !u!1 &1548136942
 GameObject:
   m_ObjectHideFlags: 0
